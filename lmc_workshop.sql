@@ -4,6 +4,11 @@ CREATE DATABASE lmc_workshop;
 
 USE lmc_workshop;
 
+-- Table for subsribe_customer
+CREATE TABLE subscripe_customer(
+	id int(10) not null auto_increment PRIMARY KEY,
+	email varchar(40) not null
+);
 
 -- Table for company profile
 CREATE table company_profile(
@@ -21,7 +26,7 @@ CREATE table user(
 	user_name varchar(20) not null,
 	fullname varchar(35) not null,
 	password varchar(10) not null,
-	email varchar(20) not null
+	email varchar(40) not null
 );
 
 -- Table to save image
@@ -55,6 +60,9 @@ CREATE table product(
 
 
 ---------------------------- INSERTING VALUE ----------------------------
+INSERT into subscripe_customer(email)
+	VALUES
+		('haha@gmail.com');
 
 INSERT into company_profile(company_name, owner_name, no_telfon, address, description)
 	VALUES
@@ -77,6 +85,7 @@ INSERT into product(id, name, category_id, image_id, material, description)
 	VALUES 
 		(uuid(), 'Pagar', 1, 1, 'Iron', 'Pagar untuk jaga rumah dari tikus liar');
 
+SELECT * FROM subscripe_customer;
 SELECT * FROM company_profile;
 SELECT * FROM user;
 SELECT * FROM image_file;

@@ -1,3 +1,4 @@
 # backend-lmc-workshop
 
-Service BE  
+Service BE  for Lukki workshop.
+Collaborate Nunu with Bie ^^

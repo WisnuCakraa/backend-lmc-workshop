@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "e0918059-3c6b-4f3a-8919-06b331f7b604",
+		"name": "LMC Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Company Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/company-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"company-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Maintain Company Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 1,\n        \"companyName\": \"LUKI MANDIRI CORP\",\n        \"ownerName\": \"Riswanto\",\n        \"noTelp\": \"82139510449\",\n        \"address\": \"Jl. Gadel Timur II/48 Surabaya\",\n        \"description\": \"Bengkel Las saranghaeyo\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8282/api/v1/company-profile/maintain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"company-profile",
+						"maintain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 3,\n        \"categoryName\": \"ZPlastic\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8282/api/v1/category/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/category/delete/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"delete",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"userName\": \"ryehel7\",\n        \"fullname\": \"Nunu Chan\",\n        \"password\": \"nununu11\",\n        \"email\": \"bie@gmail.com\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8282/api/v1/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/user/delete/1bea2c1d-7353-11eb-948d-9f8de5d374cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"delete",
+						"1bea2c1d-7353-11eb-948d-9f8de5d374cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Customer email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pageNumber",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8282/api/v1/customer/list-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"list-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Customer email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"annani@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8282/api/v1/customer/add-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8282",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"add-email"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

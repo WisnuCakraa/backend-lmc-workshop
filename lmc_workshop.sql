@@ -4,11 +4,6 @@ CREATE DATABASE lmc_workshop;
 
 USE lmc_workshop;
 
--- Table for subsribe_customer
-CREATE TABLE subscripe_customer(
-	id int(10) not null auto_increment PRIMARY KEY,
-	email varchar(40) not null
-);
 
 -- Table for company profile
 CREATE table company_profile(
@@ -26,17 +21,17 @@ CREATE table user(
 	user_name varchar(20) not null,
 	fullname varchar(35) not null,
 	password varchar(10) not null,
-	email varchar(40) not null
+	email varchar(20) not null
 );
 
 -- Table to save image
-CREATE table image_file(
-	id int(10) not null auto_increment PRIMARY KEY, 
-	file_name varchar(100) not null,
-	file_type varchar(30) not null,
-	url varchar(100),
-	byte varchar(500) not null
-);
+-- --CREATE table image_file(
+-- --	id int(10) not null auto_increment PRIMARY KEY, 
+-- --	file_name varchar(100) not null,
+-- --	file_type varchar(30) not null,
+-- --	url varchar(100),
+-- --	byte varchar(500) not null
+-- --);
 
 -- Table category for product
 CREATE table category( 
@@ -49,20 +44,16 @@ CREATE table product(
 	id varchar(40) not null PRIMARY KEY, 
 	name varchar(100) not null UNIQUE,
 	category_id int(10),
-	image_id int(10),
+	image_file varchar(100),
 	material varchar(40),
 	description varchar(500) not null,
 	
-	CONSTRAINT `fk_product_category` FOREIGN KEY (category_id) REFERENCES category (id),
-	CONSTRAINT `fk_product_image_file` FOREIGN KEY (image_id) REFERENCES image_file (id)
+	CONSTRAINT `fk_product_category` FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
 
 
 ---------------------------- INSERTING VALUE ----------------------------
-INSERT into subscripe_customer(email)
-	VALUES
-		('haha@gmail.com');
 
 INSERT into company_profile(company_name, owner_name, no_telfon, address, description)
 	VALUES
@@ -72,33 +63,29 @@ INSERT into user(id, user_name, fullname, password, email)
 	VALUES
 		(uuid(), 'ryehel7', 'Bie Chan', 'nununu', 'bie@gmail.com');
 
-INSERT into image_file(file_name, file_type, url, byte)
-	VALUES 
-		('gumbal.jpg', 'application/jpg', '/home/upload', 'ABCGAGHAA3772GGG');
+-- INSERT into image_file(file_name, file_type, url, byte)
+-- 	VALUES 
+-- 		('gumbal.jpg', 'application/jpg', '/home/upload', 'ABCGAGHAA3772GGG');
 
 INSERT into category(category_name)
 	VALUES
 			('Iron'),
 			('Wood');
 
-INSERT into product(id, name, category_id, image_id, material, description)
+INSERT into product(id, name, category_id, image_file, material, description)
 	VALUES 
-		(uuid(), 'Pagar', 1, 1, 'Iron', 'Pagar untuk jaga rumah dari tikus liar');
+		(uuid(), 'Pagar', 1, 'gumbal.jpg', 'Iron', 'Pagar untuk jaga rumah dari tikus liar');
 
-SELECT * FROM subscripe_customer;
 SELECT * FROM company_profile;
 SELECT * FROM user;
-SELECT * FROM image_file;
 SELECT * FROM category;
 SELECT * FROM product;
 
 SELECT  
-	p.name as PRODUCT_NAME, c.category_name, p.material, p.description, i.file_name
+	p.name as PRODUCT_NAME, c.category_name, p.material, p.description, p.image_file 
 FROM
 	product p
 JOIN 
 	category c on c.id = p.category_id
-JOIN 
-	image_file i on i.id = p.image_id
 ;
 	
